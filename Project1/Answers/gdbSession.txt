@@ -1,0 +1,1337 @@
+Script started on 2020-09-22 11:58:16-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="143" LINES="93"]
+- (line 1): function: The name 'status' is reserved,
+and can not be used as a function name
+function status --wraps 'git status' --description 'alias status=git status';  git status $argv; end
+^
+from sourcing file -
+	called on line 61 of file /usr/share/fish/functions/alias.fish
+in function 'alias' with arguments 'status=git\ status'
+	called on line 118 of file ~/.config/fish/config.fish
+from sourcing file ~/.config/fish/config.fish
+	called during startup
+rm: cannot remove '/home/rjslater/Desktop': No such file or directory
+~/.config/fish/config.fish (line 145): 
+doas updatedb &
+^
+from sourcing file ~/.config/fish/config.fish
+	called during startup
+[H[2J[3J[?25l[?7l[0m[36m[1m                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++o[0m[36m[1moooooooo[0m[36m[1moooo/`
+[0m[36m[1m         [0m[36m[1m./[0m[36m[1mooosssso++osssssso[0m[36m[1m+`
+[0m[36m[1m        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/-
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `/[0m
+[19A[9999999D[41C[0m[1m[36m[1mrjslater[0m@[36m[1mveronica[0m 
+[41C[0m-----------------[0m 
+[41C[0m[36m[1mOS[0m[0m:[0m Arch Linux x86_64[0m 
+[41C[0m[36m[1mKernel[0m[0m:[0m 5.8.10-arch1-1[0m 
+[41C[0m[36m[1mUptime[0m[0m:[0m 2 hours, 35 mins[0m 
+[41C[0m[36m[1mPackages[0m[0m:[0m 1207 (pacman)[0m 
+[41C[0m[36m[1mShell[0m[0m:[0m fish 3.1.2[0m 
+[41C[0m[36m[1mResolution[0m[0m:[0m 1920x1080, 2560x1440[0m 
+[41C[0m[36m[1mWM[0m[0m:[0m i3[0m 
+[41C[0m[36m[1mTheme[0m[0m:[0m Canta-blue-dark [GTK2/3][0m 
+[41C[0m[36m[1mIcons[0m[0m:[0m Simply-Blue-Circles [GTK2/3][0m 
+[41C[0m[36m[1mTerminal[0m[0m:[0m script[0m 
+[41C[0m[36m[1mCPU[0m[0m:[0m AMD Ryzen 9 3950X (32) @ 3.500GHz[0m 
+[41C[0m[36m[1mGPU[0m[0m:[0m NVIDIA GeForce RTX 2080 SUPER[0m 
+[41C[0m[36m[1mMemory[0m[0m:[0m 6298MiB / 32084MiB[0m 
+
+[41C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37m[47m   [m
+[41C[38;5;8m[48;5;8m   [38;5;9m[48;5;9m   [38;5;10m[48;5;10m   [38;5;11m[48;5;11m   [38;5;12m[48;5;12m   [38;5;13m[48;5;13m   [38;5;14m[48;5;14m   [38;5;15m[48;5;15m   [m
+
+
+[?25h[?7hTue Sep 22 11:58:16 AM EDT 2020
+Boot    	[[32m||||||||||||||||||||||||[0m                          ] 211.1G / 433.7G	[32m48.7[0m%
+LinuxSSD	[[32m||||||||||||[0m                                      ] 51.5G / 207.9G	[32m24.8[0m%
+tmp     	[[32m[0m                                                  ] 7.7M / 15.7G	[32m0.0[0m%
+efi     	[[32m||[0m                                                ] 26.9M / 511.0M	[32m5.3[0m%
+Hulk    	[[32m||||[0m                                              ] 231.9G / 2.5T	[32m8.9[0m%
+OBSShare	[[32m|||||[0m                                             ] 104.4G / 931.5G	[32m11.2[0m%
+]0;[ ~/D/W/2/C/C/Project1 ][30m(B[m[2m⏎(B[m                                                                                                                                              ⏎ [K[?2004h]0;[ ~/D/W/2/C/C/Project1 ][30m(B[m]0;[ ~/D/W/2/C/C/Project1 ][37m[44m  [1m[30m[47m rjslater@veronica [1m[33m[40m ~/D/W/2/C/C/Project1 (B[m [K[71C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[45Cgdb ./P0[63C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[53C[38;2;0;95;215mgdb[30m(B[m [38;2;0;175;255m./P0[63C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[53C[63C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[53C
+[30m(B[m[?2004l]0;[ ~/D/W/2/C/C/Project1 ][30m(B[m[35;1m[35;1mGNU gdb [m[35;1m(GDB) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-pc-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+./P0: No such file or directory.
+(gdb) quit
+[2m⏎(B[m                                                                                                                                              ⏎ [K[?2004h]0;[ ~/D/W/2/C/C/Project1 ][30m(B[m]0;[ ~/D/W/2/C/C/Project1 ][37m[44m  [1m[30m[47m rjslater@veronica [1m[33m[40m ~/D/W/2/C/C/Project1 (B[m [K[71C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[45Cc[70C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[46C[70C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[46C[38;2;0;95;215mc[70C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[46C[38;2;85;85;85md source/P0-2020-Fall/[48C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[46C[38;2;0;95;215md[38;2;85;85;85m source/P0-2020-Fall/[48C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[47C[69C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[47C[38;2;0;95;215m source/P0-2020-Fall/[48C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[68C[21D [38;2;0;175;255m[4msource/P0-2020-Fall/[48C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[68C[48C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[68C
+[30m(B[m[?2004l]0;[ ~/D/W/2/C/C/Project1 ][30m(B[m[2m⏎(B[m                                                                                                                                              ⏎ [K[?2004h]0;[ ~/D/W/2/C/C/P/s/P0-2020-Fall ][30m(B[m]0;[ ~/D/W/2/C/C/P/s/P0-2020-Fall ][37m[44m  [1m[30m[47m rjslater@veronica [1m[33m[40m ~/D/W/2/C/C/P/s/P0-2020-Fall (B[m [K[63C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[53Ccd source/P0-2020-Fall/[40C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[76C[23D[38;2;0;95;215mcd[30m(B[m [38;2;255;0;0msource/P0-2020-Fall/[40C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[76C[23D[38;2;0;95;215mgd[30m(B[mb[38;2;255;0;0m ./P0[30m(B[m[K[55C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[61C[38;2;0;95;215mb[30m(B[m [38;2;0;175;255m[4m./P0[55C[30m(B[m[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[61C[55C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 11:58 (B[m[116C[61C
+[30m(B[m[?2004l]0;[ ~/D/W/2/C/C/P/s/P0-2020-Fall ][30m(B[m[35;1m[35;1mGNU gdb [m[35;1m(GDB) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-pc-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./P0[m...
+(gdb) b shell.cpp:356
+Breakpoint 1 at [34m0x57e8[m: file [32mshell.cpp[m, line 356.
+(gdb) pbuf[K[K[K buf
+No symbol "buf" in current context.
+(gdb) s
+The program is not being run.
+(gdb) r
+Starting program: /home/rjslater/Documents/WSU/2020F/CEG4350/CEG4350Projects/Project1/source/P0-2020-Fall/P0 
+- (line 1): function: The name 'status' is reserved,
+and can not be used as a function name
+function status --wraps 'git status' --description 'alias status=git status';  git status $argv; end
+^
+from sourcing file -
+	called on line 61 of file /usr/share/fish/functions/alias.fish
+in function 'alias' with arguments 'status=git\ status'
+	called on line 118 of file ~/.config/fish/config.fish
+from sourcing file ~/.config/fish/config.fish
+	called during startup
+rm: cannot remove '/home/rjslater/Desktop': No such file or directory
+fish: Unknown command: doas
+~/.config/fish/config.fish (line 145): 
+doas updatedb &
+^
+from sourcing file ~/.config/fish/config.fish
+	called during startup
+[H[2J[3J[?25l[?7l[0m[36m[1m                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++o[0m[36m[1moooooooo[0m[36m[1moooo/`
+[0m[36m[1m         [0m[36m[1m./[0m[36m[1mooosssso++osssssso[0m[36m[1m+`
+[0m[36m[1m        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/-
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `/[0m
+[19A[9999999D[41C[0m[1m[36m[1mrjslater[0m@[36m[1mveronica[0m 
+[41C[0m-----------------[0m 
+[41C[0m[36m[1mOS[0m[0m:[0m Arch Linux x86_64[0m 
+[41C[0m[36m[1mKernel[0m[0m:[0m 5.8.10-arch1-1[0m 
+[41C[0m[36m[1mUptime[0m[0m:[0m 2 hours, 36 mins[0m 
+[41C[0m[36m[1mPackages[0m[0m:[0m 1207 (pacman)[0m 
+[41C[0m[36m[1mShell[0m[0m:[0m fish 3.1.2[0m 
+[41C[0m[36m[1mResolution[0m[0m:[0m 1920x1080, 2560x1440[0m 
+[41C[0m[36m[1mWM[0m[0m:[0m i3[0m 
+[41C[0m[36m[1mTheme[0m[0m:[0m Canta-blue-dark [GTK2/3][0m 
+[41C[0m[36m[1mIcons[0m[0m:[0m Simply-Blue-Circles [GTK2/3][0m 
+[41C[0m[36m[1mTerminal[0m[0m:[0m gdb[0m 
+[41C[0m[36m[1mCPU[0m[0m:[0m AMD Ryzen 9 3950X (32) @ 3.500GHz[0m 
+[41C[0m[36m[1mGPU[0m[0m:[0m NVIDIA GeForce RTX 2080 SUPER[0m 
+[41C[0m[36m[1mMemory[0m[0m:[0m 6318MiB / 32084MiB[0m 
+
+[41C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37m[47m   [m
+[41C[38;5;8m[48;5;8m   [38;5;9m[48;5;9m   [38;5;10m[48;5;10m   [38;5;11m[48;5;11m   [38;5;12m[48;5;12m   [38;5;13m[48;5;13m   [38;5;14m[48;5;14m   [38;5;15m[48;5;15m   [m
+
+
+[?25h[?7hTue Sep 22 11:59:07 AM EDT 2020
+Boot    	[[32m||||||||||||||||||||||||[0m                          ] 211.1G / 433.7G	[32m48.7[0m%
+LinuxSSD	[[32m||||||||||||[0m                                      ] 51.5G / 207.9G	[32m24.8[0m%
+tmp     	[[32m[0m                                                  ] 7.9M / 15.7G	[32m0.0[0m%
+efi     	[[32m||[0m                                                ] 26.9M / 511.0M	[32m5.3[0m%
+Hulk    	[[32m||||[0m                                              ] 231.9G / 2.5T	[32m8.9[0m%
+OBSShare	[[32m|||||[0m                                             ] 104.4G / 931.5G	[32m11.2[0m%
+
+Breakpoint 1, [33mmain[m () at [32mshell.cpp[m:356
+356	[31m{[m
+(gdb) p buff[K
+$1 = "\a\000\000\000\000\000\000\000\a\000\000\000\v\000\000\000\260\006\375\367\377\177\000\000\245\326\375\367\377\177\000\000\000\000\000\000\000\000\000\000\250\344\375\367\377\177\000\000\360\062\306\367\377\177\000\000P:\306\367\377\177\000\000\240\341\377\367\377\177\000\000\000\000\000\000\000\000\000\000\260\342\377\377\377\177\000\000\000\000\000\000\000\000\000\000\220\b\375\367\377\177\000\000\350\317\377\367\377\177", '\000' <repeats 18 times>, "\b\345\377\367\377\177\000\000\260\342\377\377\377\177\000\000\000\000\375\367\377\177\000\000%\207\376\367\377\177\000\000\030ֽ\367\377\177\000\000\312K\377\367\377\177\000\000\274K\377\367\377\177\000\000\205\317c\t\000\000\000\000\340y\371\367\377\177\000\000\357"...
+(gdb) p arg
+$2 = {{s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, [m
+    [mu = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}}
+(gdb) s
+359	  [01musage[m[31m();[m
+(gdb) s
+[33musage[m () at [32mshell.cpp[m:270
+270	  [01mprintf[m[31m([m[31m"The shell has only the following cmds:[m[35m\n[m[31m"[m[31m);[m
+(gdb) p f[Kbuf
+No symbol "buf" in current context.
+(gdb) parg
+Undefined command: "parg".  Try "help".
+(gdb) p arg
+$3 = {{s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, [m
+    [mu = 0}, {s = [34m0x0[m, u = 0}, {s = [34m0x0[m, u = 0}}
+(gdb) ptypes[K[K[K[K[K types
+$4 = "\000\000\000\000\000\000\000\000\000\000"
+(gdb) p nArgs
+$5 = 0
+(gdb) s
+The shell has only the following cmds:
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	cd	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	cp	ss
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	echo	ssss
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	inode	u
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	ls	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	lslong	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mkdir	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mkdisk	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mkfs	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mount	us
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mount	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mv	ss
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	rddisk	su
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	rmdir	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) n
+	rm	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	pwd	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	q	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	quit	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	umount	u
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	wrdisk	sus
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+273	  [01mprintf[m[31m([m[31m"Start with ! to invoke a Unix shell cmd[m[35m\n[m[31m"[m[31m);[m
+(gdb) s
+Start with ! to invoke a Unix shell cmd
+274	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:361
+361	    [31m*[mbuf [31m=[m [35m0[m[31m;[m			[36m// clear old input[m
+(gdb) s
+362	    [01mprintf[m[31m([m[31m"%s"[m[31m,[m [31m"sh33% "[m[31m);[m	[36m// prompt[m
+(gdb) s
+363	    [01mourgets[m[31m([mbuf[31m);[m
+(gdb) s
+[33mourgets[m ([36mbuf[m=0x7fffffffe1b0 "") at [32mshell.cpp[m:350
+350	  [01mfgets[m[31m([mbuf[31m,[m [35m1024[m[31m,[m stdin[31m);[m
+(gdb) s
+sh33% s
+351	  [32mchar[m [31m*[m p [31m=[m [01mindex[m[31m([mbuf[31m,[m [31m'[m[35m\n[m[31m'[m[31m);[m
+(gdb) s
+352	  [01;34mif[m [31m([mp[31m)[m [31m*[mp [31m=[m [35m0[m[31m;[m
+(gdb) s
+353	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:364
+364	    [01mprintf[m[31m([m[31m"cmd [%s][m[35m\n[m[31m"[m[31m,[m buf[31m);[m	[36m// just print out what we got as-is[m
+(gdb) s
+cmd [s]
+365	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [35m0[m[31m)[m
+(gdb) s
+367	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'#'[m[31m)[m
+(gdb) s
+369	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'!'[m[31m)[m		[36m// begins with !, execute it as[m
+(gdb) s
+372	      [01msetArgsGiven[m[31m([mbuf[31m,[m arg[31m,[m types[31m,[m nArgsMax[31m);[m
+(gdb) ss
+Undefined command: "ss".  Try "help".
+(gdb) s[Ks
+[33msetArgsGiven[m ([36mbuf[m=0x7fffffffe1b0 "s", [36marg[m=0x55555575c2e0 <arg>, [36mtypes[m=0x55555575c2d0 <types> "", [36mnMax[m=10) at [32mshell.cpp[m:315
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+319	  types[31m[[mnMax[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+321	  [01mstrtok[m[31m([mbuf[31m,[m [31m" [m[35m\t\n[m[31m"[m[31m);[m		[36m// terminates the cmd name with a \0[m
+(gdb) s
+323	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;)[m [31m{[m
+(gdb) s
+324	      [32mchar[m [31m*[mq [31m=[m [01mstrtok[m[31m([m[35m0[m[31m,[m [31m" [m[35m\t[m[31m"[m[31m);[m
+(gdb) s
+325	      [01;34mif[m [31m([mq [31m==[m [35m0[m [31m||[m [31m*[mq [31m==[m [35m0[m[31m)[m [01;34mbreak[m[31m;[m
+(gdb) s
+331	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:373
+373	      [32mint[m k [31m=[m [01mfindCmd[m[31m([mbuf[31m,[m types[31m);[m
+(gdb) s
+[33mfindCmd[m ([36mname[m=0x7fffffffe1b0 "s", [36margtypes[m=0x55555575c2d0 <types> "") at [32mshell.cpp[m:340
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+346	  [01;34mreturn[m [31m-[m[35m1[m[31m;[m
+(gdb) s
+347	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:374
+374	      [01;34mif[m [31m([mk [31m>=[m [35m0[m[31m)[m
+(gdb) s
+377		[01musage[m[31m();[m
+(gdb) s
+[33musage[m () at [32mshell.cpp[m:270
+270	  [01mprintf[m[31m([m[31m"The shell has only the following cmds:[m[35m\n[m[31m"[m[31m);[m
+(gdb) s
+The shell has only the following cmds:
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	cd	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	cp	ss
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	echo	ssss
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	inode	u
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	ls	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	lslong	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mkdir	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mkdisk	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mkfs	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mount	us
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mount	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	mv	ss
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	rddisk	su
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	rmdir	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	rm	s
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	pwd	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	q	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	quit	
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	umount	u
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+272	    [01mprintf[m[31m([m[31m"[m[35m\t[m[31m%s[m[35m\t[m[31m%s[m[35m\n[m[31m"[m[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m);[m
+(gdb) s
+	wrdisk	sus
+271	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m
+(gdb) s
+273	  [01mprintf[m[31m([m[31m"Start with ! to invoke a Unix shell cmd[m[35m\n[m[31m"[m[31m);[m
+(gdb) s
+Start with ! to invoke a Unix shell cmd
+274	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:361
+361	    [31m*[mbuf [31m=[m [35m0[m[31m;[m			[36m// clear old input[m
+(gdb) s
+362	    [01mprintf[m[31m([m[31m"%s"[m[31m,[m [31m"sh33% "[m[31m);[m	[36m// prompt[m
+(gdb) s
+363	    [01mourgets[m[31m([mbuf[31m);[m
+(gdb) s
+[33mourgets[m ([36mbuf[m=0x7fffffffe1b0 "") at [32mshell.cpp[m:350
+350	  [01mfgets[m[31m([mbuf[31m,[m [35m1024[m[31m,[m stdin[31m);[m
+(gdb) s
+sh33% mkfs D1
+351	  [32mchar[m [31m*[m p [31m=[m [01mindex[m[31m([mbuf[31m,[m [31m'[m[35m\n[m[31m'[m[31m);[m
+(gdb) s
+352	  [01;34mif[m [31m([mp[31m)[m [31m*[mp [31m=[m [35m0[m[31m;[m
+(gdb) s
+353	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:364
+364	    [01mprintf[m[31m([m[31m"cmd [%s][m[35m\n[m[31m"[m[31m,[m buf[31m);[m	[36m// just print out what we got as-is[m
+(gdb) s
+cmd [mkfs D1]
+365	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [35m0[m[31m)[m
+(gdb) s
+367	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'#'[m[31m)[m
+(gdb) s
+369	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'!'[m[31m)[m		[36m// begins with !, execute it as[m
+(gdb) s
+372	      [01msetArgsGiven[m[31m([mbuf[31m,[m arg[31m,[m types[31m,[m nArgsMax[31m);[m
+(gdb) s
+[33msetArgsGiven[m ([36mbuf[m=0x7fffffffe1b0 "mkfs D1", [36marg[m=0x55555575c2e0 <arg>, [36mtypes[m=0x55555575c2d0 <types> "", [36mnMax[m=10) at [32mshell.cpp[m:315
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+316	    arg[31m[[mi[31m].[ms [31m=[m [35m0[m[31m;[m
+(gdb) s
+317	    types[31m[[mi[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+315	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+319	  types[31m[[mnMax[31m][m [31m=[m [35m0[m[31m;[m
+(gdb) s
+321	  [01mstrtok[m[31m([mbuf[31m,[m [31m" [m[35m\t\n[m[31m"[m[31m);[m		[36m// terminates the cmd name with a \0[m
+(gdb) s
+323	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;)[m [31m{[m
+(gdb) s
+324	      [32mchar[m [31m*[mq [31m=[m [01mstrtok[m[31m([m[35m0[m[31m,[m [31m" [m[35m\t[m[31m"[m[31m);[m
+(gdb) s
+325	      [01;34mif[m [31m([mq [31m==[m [35m0[m [31m||[m [31m*[mq [31m==[m [35m0[m[31m)[m [01;34mbreak[m[31m;[m
+(gdb) s
+326	      arg[31m[[mi[31m].[ms [31m=[m q[31m;[m
+(gdb) s
+327	      arg[31m[[mi[31m].[mu [31m=[m [01mtoNum[m[31m([mq[31m);[m
+(gdb) s
+[33mtoNum[m ([36mp[m=0x7fffffffe1b5 "D1") at [32mshell.cpp[m:53
+53	  [01;34mreturn[m [31m([mp [31m!=[m [35m0[m [31m&&[m [31m'0'[m [31m<=[m [31m*[mp [31m&&[m [31m*[mp [31m<=[m [31m'9'[m [31m?[m [01matoi[m[31m([mp[31m)[m [31m:[m [35m0[m[31m);[m
+(gdb) s
+54	[31m}[m
+(gdb) s
+[33msetArgsGiven[m ([36mbuf[m=0x7fffffffe1b0 "mkfs", [36marg[m=0x55555575c2e0 <arg>, [36mtypes[m=0x55555575c2d0 <types> "", [36mnMax[m=10) at [32mshell.cpp[m:328
+328	      types[31m[[mi[31m][m [31m=[m [01misDigit[m[31m(*[mq[31m)?[m [31m'u'[m [31m:[m [31m's'[m[31m;[m
+(gdb) s
+[33misDigit[m ([36mc[m=68 'D') at [32mshell.cpp[m:42
+42	  [01;34mreturn[m [31m'0'[m [31m<=[m c [31m&&[m c [31m<=[m [31m'9'[m[31m;[m
+(gdb) s
+43	[31m}[m
+(gdb) s
+[33msetArgsGiven[m ([36mbuf[m=0x7fffffffe1b0 "mkfs", [36marg[m=0x55555575c2e0 <arg>, [36mtypes[m=0x55555575c2d0 <types> "s", [36mnMax[m=10) at [32mshell.cpp[m:329
+329	      nArgs [31m=[m [31m++[mi[31m;[m
+(gdb) s
+323	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m nMax[31m;)[m [31m{[m
+(gdb) s
+324	      [32mchar[m [31m*[mq [31m=[m [01mstrtok[m[31m([m[35m0[m[31m,[m [31m" [m[35m\t[m[31m"[m[31m);[m
+(gdb) s
+325	      [01;34mif[m [31m([mq [31m==[m [35m0[m [31m||[m [31m*[mq [31m==[m [35m0[m[31m)[m [01;34mbreak[m[31m;[m
+(gdb) s
+331	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:373
+373	      [32mint[m k [31m=[m [01mfindCmd[m[31m([mbuf[31m,[m types[31m);[m
+(gdb) s
+[33mfindCmd[m ([36mname[m=0x7fffffffe1b0 "mkfs", [36margtypes[m=0x55555575c2d0 <types> "s") at [32mshell.cpp[m:340
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+340	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m ncmds[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+341	    [01;34mif[m [31m([m[01mstrcmp[m[31m([mname[31m,[m cmdTable[31m[[mi[31m].[mcmdName[31m)[m [31m==[m [35m0[m
+(gdb) s
+342		[31m&&[m [01mstrcmp[m[31m([margtypes[31m,[m cmdTable[31m[[mi[31m].[margsRequired[31m)[m [31m==[m [35m0[m[31m)[m [31m{[m
+(gdb) ss[K
+343	      [01;34mreturn[m i[31m;[m
+(gdb) s
+347	[31m}[m
+(gdb) s
+[33mmain[m () at [32mshell.cpp[m:374
+374	      [01;34mif[m [31m([mk [31m>=[m [35m0[m[31m)[m
+(gdb) s
+375		[01minvokeCmd[m[31m([mk[31m,[m arg[31m);[m
+(gdb) s
+[33minvokeCmd[m ([36mk[m=8, [36marg[m=0x55555575c2e0 <arg>) at [32mshell.cpp[m:282
+282	  uint ok [31m=[m [35m1[m[31m;[m
+(gdb) s
+283	  [01;34mif[m [31m([mcmdTable[31m[[mk[31m].[mglobalsNeeded[31m[[m[35m0[m[31m][m [31m==[m [31m'v'[m [31m&&[m cwdVNIN [31m==[m [35m0[m[31m)[m [31m{[m
+(gdb) s
+287	  [01;34melse[m [01;34mif[m [31m([mcmdTable[31m[[mk[31m].[mglobalsNeeded[31m[[m[35m0[m[31m][m [31m==[m [31m'm'[m [31m&&[m mtab [31m==[m [35m0[m[31m)[m [31m{[m
+(gdb) s
+292	  [32mchar[m [31m*[mreq [31m=[m cmdTable[31m[[mk[31m].[margsRequired[31m;[m
+(gdb) s
+293	  uint na [31m=[m [01mstrlen[m[31m([mreq[31m);[m
+(gdb) s
+294	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m na[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+295	    [01;34mif[m [31m([mreq[31m[[mi[31m][m [31m==[m [31m's'[m [31m&&[m [31m([marg[31m[[mi[31m].[ms [31m==[m [35m0[m [31m||[m arg[31m[[mi[31m].[ms[31m[[m[35m0[m[31m][m [31m==[m [35m0[m[31m))[m [31m{[m
+(gdb) s
+299	    [01;34mif[m [31m(([mreq[31m[[mi[31m][m [31m==[m [31m'u'[m[31m)[m [31m&&[m [31m([marg[31m[[mi[31m].[ms [31m==[m [35m0[m [31m||[m [31m![m[01misDigit[m[31m([marg[31m[[mi[31m].[ms[31m[[m[35m0[m[31m])))[m [31m{[m
+(gdb) s
+294	  [01;34mfor[m [31m([muint i [31m=[m [35m0[m[31m;[m i [31m<[m na[31m;[m i[31m++)[m [31m{[m
+(gdb) s
+304	  [01;34mif[m [31m([mok[31m)[m
+(gdb) s
+305	    [31m(*[mcmdTable[31m[[mk[31m].[mfunc[31m)[m [31m([marg[31m);[m
+(gdb) s
+[33mdoMakeFV[m ([36ma[m=0x55555575c2e0 <arg>) at [32mshell.cpp[m:120
+120	  SimDisk [31m*[m simDisk [31m=[m [01mmkSimDisk[m[31m(([mbyte [31m*)[m a[31m[[m[35m0[m[31m].[ms[31m);[m
+(gdb) s
+[33mmkSimDisk[m ([36mname[m=0x7fffffffe1b5 "D1") at [32mshell.cpp[m:58
+58	  SimDisk [31m*[m simDisk [31m=[m [01;34mnew[m [01mSimDisk[m[31m([mname[31m,[m [35m0[m[31m);[m
+(gdb) s
+[33moperator new[m ([36msz[m=40) at [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m:43
+43	/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc: No such file or directory.
+(gdb) s
+47	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) s
+50	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) s
+[33mSimDisk::SimDisk[m ([36mthis[m=0x55555576f6d0, [36mdiskName[m=0x7fffffffe1b5 "D1", [36mdiskNumber[m=0) at [32msimdisk.cpp[m:52
+52	SimDisk[31m::[m[01mSimDisk[m[31m([mbyte [31m*[m diskName[31m,[m uint diskNumber[31m)[m
+(gdb) s
+55	  uint nargs [31m=[m [35m0[m[31m;[m
+(gdb) s
+56	  simDiskNum [31m=[m [35m0[m[31m;[m
+(gdb) s
+58	  [01;34mif[m [31m([mdiskName [31m!=[m [35m0[m[31m)[m diskNumber [31m=[m [35m255[m [31m+[m [35m1[m[31m;[m [36m// assuming a max of 255 disks[m
+(gdb) s
+60	  FILE [31m*[mf [31m=[m [01mfopen[m[31m([m[31m"diskParams.dat"[m[31m,[m [31m"r"[m[31m);[m
+(gdb) s
+61	  [01;34mif[m [31m([mf [31m!=[m [35m0[m[31m)[m [31m{[m
+(gdb) s
+62	    [01;34mfor[m [31m([muint dn [31m=[m [35m1[m[31m;[m dn [31m<=[m diskNumber[31m;[m dn [31m++)[m [31m{[m
+(gdb) s
+63	      [01;34mif[m [31m([m[01mfgets[m[31m([mline[31m,[m [35m1024[m[31m,[m f[31m)[m [31m==[m [35m0[m[31m)[m [31m{[m
+(gdb) s
+66	      [01;34mif[m [31m([mline[31m[[m[35m0[m[31m][m [31m==[m [31m'#'[m[31m)[m [31m{[m
+(gdb) s
+67	        [01;34mcontinue[m[31m;[m               [36m// comment line;[m
+(gdb) s
+62	    [01;34mfor[m [31m([muint dn [31m=[m [35m1[m[31m;[m dn [31m<=[m diskNumber[31m;[m dn [31m++)[m [31m{[m
+(gdb) s
+63	      [01;34mif[m [31m([m[01mfgets[m[31m([mline[31m,[m [35m1024[m[31m,[m f[31m)[m [31m==[m [35m0[m[31m)[m [31m{[m
+(gdb) s
+66	      [01;34mif[m [31m([mline[31m[[m[35m0[m[31m][m [31m==[m [31m'#'[m[31m)[m [31m{[m
+(gdb) s
+69	      nargs [31m=[m [01msscanf[m[31m([mline[31m,[m [31m"%s %u %u %u %u %u[m[35m\n[m[31m"[m[31m,[m
+(gdb) s
+73	      [01;34mif[m [31m([mnargs [31m<[m [35m6[m[31m)[m [31m{[m
+(gdb) s
+76	      [01;34mif[m [31m([mdiskName [31m!=[m [35m0[m [31m&&[m [01mstrcmp[m[31m(([m[32mchar[m [31m*)[m[01;34mthis[m[31m->[mname[31m,[m [31m([m[32mchar[m [31m*)[mdiskName[31m)[m [31m==[m [35m0[m
+(gdb) s
+78		simDiskNum [31m=[m dn[31m;[m
+(gdb) s
+79		[01;34mbreak[m[31m;[m			[36m// found it[m
+(gdb) s
+82	    [01mfclose[m[31m([mf[31m);[m
+(gdb) s
+84	  [01;34mif[m [31m([msimDiskNum [31m==[m [35m0[m [31m||[m
+(gdb) s
+85	      [31m!([m[35m0[m [31m<[m nSectorsPerDisk [31m&&[m nSectorsPerDisk [31m<=[m SectorsMAX [31m&&[m
+(gdb) s
+84	  [01;34mif[m [31m([msimDiskNum [31m==[m [35m0[m [31m||[m
+(gdb) s
+85	      [31m!([m[35m0[m [31m<[m nSectorsPerDisk [31m&&[m nSectorsPerDisk [31m<=[m SectorsMAX [31m&&[m
+(gdb) s
+86		[35m0[m [31m<[m nBytesPerSector [31m&&[m nBytesPerSector [31m<=[m BytesPerSectorMAX[31m))[m [31m{[m
+(gdb) s
+85	      [31m!([m[35m0[m [31m<[m nSectorsPerDisk [31m&&[m nSectorsPerDisk [31m<=[m SectorsMAX [31m&&[m
+(gdb) s
+86		[35m0[m [31m<[m nBytesPerSector [31m&&[m nBytesPerSector [31m<=[m BytesPerSectorMAX[31m))[m [31m{[m
+(gdb) s
+85	      [31m!([m[35m0[m [31m<[m nSectorsPerDisk [31m&&[m nSectorsPerDisk [31m<=[m SectorsMAX [31m&&[m
+(gdb) s
+91	  [32mint[m fd [31m=[m [01mopenDiskImage[m[31m([mO_RDONLY[31m),[m exists [31m=[m [31m([mfd [31m>=[m [35m3[m[31m);[m [36m// already exists?[m
+(gdb) s
+[33mSimDisk::openDiskImage[m ([36mthis[m=0x55555576f6d0, [36mmode[m=0) at [32msimdisk.cpp[m:18
+18	[31m{[m
+(gdb) s
+20	  [01msprintf[m[31m([mtfnm[31m,[m [31m"%s.dsk"[m[31m,[m [01;34mthis[m[31m->[mname[31m);[m
+(gdb) s
+21	  [01;34mreturn[m [01mopen[m[31m([mtfnm[31m,[m mode[31m,[m [35m0600[m[31m);[m
+(gdb) s
+22	[31m}[m
+(gdb) s
+[33mSimDisk::SimDisk[m ([36mthis[m=0x55555576f6d0, [36mdiskName[m=0x7fffffffe1b5 "D1", [36mdiskNumber[m=256) at [32msimdisk.cpp[m:92
+92	  [01;34mif[m [31m([mexists[31m)[m [31m{[m
+(gdb) s
+98	  [01;34mif[m [31m(![m exists[31m)[m [31m{[m
+(gdb) s
+99	    fd [31m=[m [01mmakeDiskImage[m[31m();[m
+(gdb) s
+[33mSimDisk::makeDiskImage[m ([36mthis[m=0x55555576f6d0) at [32msimdisk.cpp[m:32
+32	  [32mint[m fd [31m=[m [01mopenDiskImage[m[31m([mO_WRONLY [31m|[m O_CREAT[31m);[m
+(gdb) s
+[33mSimDisk::openDiskImage[m ([36mthis[m=0x55555576f6d0, [36mmode[m=65) at [32msimdisk.cpp[m:18
+18	[31m{[m
+(gdb) s
+20	  [01msprintf[m[31m([mtfnm[31m,[m [31m"%s.dsk"[m[31m,[m [01;34mthis[m[31m->[mname[31m);[m
+(gdb) s
+21	  [01;34mreturn[m [01mopen[m[31m([mtfnm[31m,[m mode[31m,[m [35m0600[m[31m);[m
+(gdb) s
+22	[31m}[m
+(gdb) s
+[33mSimDisk::makeDiskImage[m ([36mthis[m=0x55555576f6d0) at [32msimdisk.cpp[m:33
+33	  [01;34mif[m [31m([mfd [31m<[m [35m3[m[31m)[m
+(gdb) s
+36	  byte [31m*[m buf [31m=[m [01;34mnew[m byte [31m[[mnBytesPerSector[31m];[m
+(gdb) s
+[33moperator new[][m ([36msz[m=512) at [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_opv.cc[m:31
+31	/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_opv.cc: No such file or directory.
+(gdb) s
+32	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_opv.cc[m
+(gdb) s
+[33moperator new[m ([36msz[m=512) at [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m:43
+43	/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc: No such file or directory.
+(gdb) s
+47	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) s
+50	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) s
+[33mSimDisk::makeDiskImage[m ([36mthis[m=0x55555576f6d0) at [32msimdisk.cpp[m:37
+37	  [01mmemset[m[31m([mbuf[31m,[m [35m0[m[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s
+39	    [01mwrite[m[31m([mfd[31m,[m buf[31m,[m nBytesPerSector[31m);[m
+(gdb) s
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s 10
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s100
+Undefined command: "s100".  Try "help".
+(gdb) s 100
+38	  [01;34mfor[m [31m([muint i [31m=[m nSectorsPerDisk[31m;[m i[31m--;)[m
+(gdb) s 100
+Single stepping until exit from function free,
+which has no line number information.
+Single stepping until exit from function _int_free,
+which has no line number information.
+[33mdoMakeFV[m ([36ma[m=0x55555575c2e0 <arg>) at [32mshell.cpp[m:121
+121	  [01;34mif[m [31m([msimDisk [31m==[m [35m0[m[31m)[m
+(gdb) s
+123	  fv [31m=[m simDisk[31m->[m[01mmake33fv[m[31m();[m
+(gdb) s
+[33mSimDisk::make33fv[m ([36mthis[m=0x55555576f6d0) at [32msimdisk.cpp[m:130
+130	  [01;34mreturn[m nSectorsPerDisk [31m>[m [35m0[m
+(gdb) s
+131	    [31m?[m [01;34mnew[m [01mFileVolume[m[31m([m[01;34mthis[m[31m,[m
+(gdb) s
+134	                     [35m1[m[31m)[m [31m:[m [35m0[m[31m;[m
+(gdb) s
+[33moperator new[m ([36msz[m=136) at [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m:43
+43	/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc: No such file or directory.
+(gdb) s
+47	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) s
+50	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) s
+[33mFileVolume::FileVolume[m ([36mthis[m=0x55555576faf0, [36mpsimDisk[m=0x55555576f6d0, [36mnInodes[m=20, [36miHeight[m=3, [36mnSecPerBlock[m=1) at [32mvolume.cpp[m:29
+29	  simDisk [31m=[m psimDisk[31m;[m
+(gdb) s
+30	  [01mmemset[m[31m(&[msuperBlock[31m,[m [35m0[m[31m,[m [01;34msizeof[m[31m([msuperBlock[31m));[m
+(gdb) s
+31	  [01;34mif[m [31m([mnInodes [31m==[m [35m0[m [31m||[m iHeight [31m<[m [35m3[m [31m||[m nSecPerBlock [31m==[m [35m0[m
+(gdb) s
+32	      [31m||[m simDisk[31m->[mnBytesPerSector [31m<[m [01;34msizeof[m[31m([msuperBlock[31m))[m		[36m// too small[m
+(gdb) s
+35	  superBlock[31m.[mnTotalBlocks [31m=[m simDisk[31m->[mnSectorsPerDisk [31m/[m nSecPerBlock[31m;[m
+(gdb) s
+36	  superBlock[31m.[mnBytesPerBlock [31m=[m nSecPerBlock [31m*[m simDisk[31m->[mnBytesPerSector[31m;[m
+(gdb) s
+37	  superBlock[31m.[mnSecPerBlock [31m=[m nSecPerBlock[31m;[m
+(gdb) s
+38	  superBlock[31m.[mfileNameLengthMax [31m=[m psimDisk[31m->[mnBytesPerSector[31m;[m	[36m// for now[m
+(gdb) s
+40	    fbvBlocks[31m.[m[01mcreate[m[31m([m[01;34mthis[m[31m,[m superBlock[31m.[mnTotalBlocks[31m,[m [35m1[m[31m);[m
+(gdb) s
+[33mBitVector::create[m ([36mthis[m=0x55555576fb30, [36mpfv[m=0x55555576faf0, [36mnbits[m=128, [36mnblockbegin[m=1) at [32mbitvector.cpp[m:14
+14	  fv [31m=[m pfv[31m;[m
+(gdb) s
+15	  uint bsz [31m=[m fv[31m->[msuperBlock[31m.[mnBytesPerBlock[31m;[m
+(gdb) s
+16	  bitVector [31m=[m [01;34mnew[m byte[31m[[mbsz[31m];[m
+(gdb) s
+[33moperator new[][m ([36msz[m=512) at [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_opv.cc[m:31
+31	/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_opv.cc: No such file or directory.
+(gdb) s
+32	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_opv.cc[m
+(gdb) s
+[33moperator new[m ([36msz[m=512) at [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m:43
+43	/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc: No such file or directory.
+(gdb) s
+47	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) n
+50	in [32m/build/gcc/src/gcc/libstdc++-v3/libsupc++/new_op.cc[m
+(gdb) n
+[33mBitVector::create[m ([36mthis[m=0x55555576fb30, [36mpfv[m=0x55555576faf0, [36mnbits[m=128, [36mnblockbegin[m=1) at [32mbitvector.cpp[m:17
+17	  [01;34mif[m [31m([mbitVector [31m==[m [35m0[m[31m)[m
+(gdb) n
+20	  nBits [31m=[m nbits[31m;[m
+(gdb) n
+21	  nBlockBegin [31m=[m nblockbegin[31m;[m
+(gdb) n
+23	  uint nbytes [31m=[m [31m([mnbits [31m+[m [35m7[m[31m)[m [31m/[m [35m8[m[31m;[m [36m// so many bytes[m
+(gdb) n
+24	  uint nBlocksLong [31m=[m [31m([mnbytes [31m+[m bsz [31m-[m [35m1[m[31m)[m [31m/[m bsz[31m;[m
+(gdb) n
+25	  [01mmemset[m[31m([mbitVector[31m,[m [35m0xFF[m[31m,[m bsz[31m);[m	[36m// set all bits to free, i.e., 1[m
+(gdb) n
+27	  [01;34mfor[m [31m([muint i [31m=[m [35m1[m[31m;[m i [31m<[m nBlocksLong[31m;[m i[31m++)[m
+(gdb) n
+29	  bitVector[31m[[m[35m0[m[31m][m [31m=[m [35m0x7F[m[31m;[m		[36m// 0-th bit marked as in-use[m
+(gdb) n
+30	  fv[31m->[m[01mwriteBlock[m[31m([mnBlockBegin[31m,[m bitVector[31m);[m
+(gdb) n
+33	  [01;34mfor[m [31m([muint bn [31m=[m nBlockBegin [31m+[m nBlocksLong [31m-[m [35m1[m[31m;[m bn [31m>=[m nBlockBegin[31m;[m bn[31m--)[m
+(gdb) n
+34	    fv[31m->[mfbvBlocks[31m.[m[01msetBit[m[31m([mbn[31m,[m [35m0[m[31m);[m
+(gdb) n
+33	  [01;34mfor[m [31m([muint bn [31m=[m nBlockBegin [31m+[m nBlocksLong [31m-[m [35m1[m[31m;[m bn [31m>=[m nBlockBegin[31m;[m bn[31m--)[m
+(gdb) n
+35	  [01;34mreturn[m nBlocksLong[31m;[m
+(gdb) n
+36	[31m}[m
+(gdb) n
+[33mFileVolume::FileVolume[m ([36mthis[m=0x55555576faf0, [36mpsimDisk[m=0x55555576f6d0, [36mnInodes[m=20, [36miHeight[m=3, [36mnSecPerBlock[m=1) at [32mvolume.cpp[m:39
+39	  superBlock[31m.[mnBlocksFbvBlocks [31m=[m
+(gdb) n
+43	    fbvInodes[31m.[m[01mcreate[m[31m([m[01;34mthis[m[31m,[m nInodes[31m,[m [35m1[m [31m+[m superBlock[31m.[mnBlocksFbvBlocks[31m);[m
+(gdb) n
+42	  superBlock[31m.[mnBlocksFbvInodes [31m=[m
+(gdb) n
+45	      [31m([m[01;34mthis[m[31m,[m [35m1[m [31m+[m superBlock[31m.[mnBlocksFbvBlocks [31m+[m superBlock[31m.[mnBlocksFbvInodes[31m,[m
+(gdb) n
+49	      superBlock[31m.[mnBlockBeginInodes [31m+[m superBlock[31m.[mnBlocksOfInodes[31m;[m
+(gdb) n
+48	  superBlock[31m.[mnBlockBeginFiles [31m=[m
+(gdb) n
+51	  byte [31m*[mbp [31m=[m [01;34mnew[m byte[31m[[msuperBlock[31m.[mnBytesPerBlock[31m];[m
+(gdb) n
+52	  [01mmemcpy[m[31m([mbp[31m,[m [31m&[msuperBlock[31m,[m [01;34msizeof[m[31m([msuperBlock[31m));[m
+(gdb) n
+53	  [01mwriteBlock[m[31m([m[35m0[m[31m,[m bp[31m);[m		[36m// write it as block# 0[m
+(gdb) n
+54	  [01;34mdelete[m bp[31m;[m
+(gdb) n
+56	  [01;34mthis[m[31m->[mroot [31m=[m [01;34mnew[m [01mDirectory[m[31m([m[01;34mthis[m[31m,[m [35m1[m[31m,[m [35m1[m[31m);[m
+(gdb) n
+57	[31m}[m
+(gdb) n
+[33mSimDisk::make33fv[m ([36mthis[m=0x55555576f6d0) at [32msimdisk.cpp[m:131
+131	    [31m?[m [01;34mnew[m [01mFileVolume[m[31m([m[01;34mthis[m[31m,[m
+(gdb) n
+134	                     [35m1[m[31m)[m [31m:[m [35m0[m[31m;[m
+(gdb) n
+135	[31m}[m
+(gdb) n
+[33mdoMakeFV[m ([36ma[m=0x55555575c2e0 <arg>) at [32mshell.cpp[m:124
+124	  [01mprintf[m[31m([m[31m"make33fv() = %p, Name == %s, Disk# == %d[m[35m\n[m[31m"[m[31m,[m
+(gdb) n
+make33fv() = 0x55555576faf0, Name == D1, Disk# == 2
+127	  [01;34mif[m [31m([mfv[31m)[m [31m{[m
+(gdb) n
+128	      wd [31m=[m [01;34mnew[m [01mDirectory[m[31m([mfv[31m,[m [35m1[m[31m,[m [35m0[m[31m);[m
+(gdb) n
+129	      cwdVNIN [31m=[m [01mmkVNIN[m[31m([msimDisk[31m->[msimDiskNum[31m,[m [35m1[m[31m);[m
+(gdb) n
+131	[31m}[m
+(gdb) n
+[33minvokeCmd[m ([36mk[m=8, [36marg[m=0x55555575c2e0 <arg>) at [32mshell.cpp[m:306
+306	[31m}[m
+(gdb) n
+[33mmain[m () at [32mshell.cpp[m:361
+361	    [31m*[mbuf [31m=[m [35m0[m[31m;[m			[36m// clear old input[m
+(gdb) n
+362	    [01mprintf[m[31m([m[31m"%s"[m[31m,[m [31m"sh33% "[m[31m);[m	[36m// prompt[m
+(gdb) n
+363	    [01mourgets[m[31m([mbuf[31m);[m
+(gdb) n
+sh33% n
+364	    [01mprintf[m[31m([m[31m"cmd [%s][m[35m\n[m[31m"[m[31m,[m buf[31m);[m	[36m// just print out what we got as-is[m
+(gdb) n
+cmd [n]
+365	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [35m0[m[31m)[m
+(gdb) n
+367	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'#'[m[31m)[m
+(gdb) n
+369	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'!'[m[31m)[m		[36m// begins with !, execute it as[m
+(gdb) n
+372	      [01msetArgsGiven[m[31m([mbuf[31m,[m arg[31m,[m types[31m,[m nArgsMax[31m);[m
+(gdb) n
+373	      [32mint[m k [31m=[m [01mfindCmd[m[31m([mbuf[31m,[m types[31m);[m
+(gdb) n
+374	      [01;34mif[m [31m([mk [31m>=[m [35m0[m[31m)[m
+(gdb) n
+377		[01musage[m[31m();[m
+(gdb) n
+The shell has only the following cmds:
+	cd	s
+	cp	ss
+	echo	ssss
+	inode	u
+	ls	
+	lslong	
+	mkdir	s
+	mkdisk	s
+	mkfs	s
+	mount	us
+	mount	
+	mv	ss
+	rddisk	su
+	rmdir	s
+	rm	s
+	pwd	
+	q	
+	quit	
+	umount	u
+	wrdisk	sus
+Start with ! to invoke a Unix shell cmd
+361	    [31m*[mbuf [31m=[m [35m0[m[31m;[m			[36m// clear old input[m
+(gdb) n
+362	    [01mprintf[m[31m([m[31m"%s"[m[31m,[m [31m"sh33% "[m[31m);[m	[36m// prompt[m
+(gdb) n
+363	    [01mourgets[m[31m([mbuf[31m);[m
+(gdb) n
+sh33% n !ls
+364	    [01mprintf[m[31m([m[31m"cmd [%s][m[35m\n[m[31m"[m[31m,[m buf[31m);[m	[36m// just print out what we got as-is[m
+(gdb) n
+cmd [!ls]
+365	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [35m0[m[31m)[m
+(gdb) n
+367	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'#'[m[31m)[m
+(gdb) n
+369	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'!'[m[31m)[m		[36m// begins with !, execute it as[m
+(gdb) n
+370	      [01msystem[m[31m([mbuf [31m+[m [35m1[m[31m);[m		[36m// a normal shell cmd[m
+(gdb) n
+[Detaching after vfork from child process 435360]
+bitvector.cpp  directory.cpp   file.cpp       inodes.cpp  mount.cpp  shell.cpp	  simdisk.o	       volume.cpp
+bitvector.o    directory.o     file.o	      inodes.o	  mount.o    shell.o	  stdTestScriptP0.txt  volume.o
+D1.dsk	       diskParams.dat  fs33types.hpp  Makefile	  P0	     simdisk.cpp  user.cpp
+361	    [31m*[mbuf [31m=[m [35m0[m[31m;[m			[36m// clear old input[m
+(gdb) n
+362	    [01mprintf[m[31m([m[31m"%s"[m[31m,[m [31m"sh33% "[m[31m);[m	[36m// prompt[m
+(gdb) trace
+Tracepoint 2 at [34m0x555555559803[m: file [32mshell.cpp[m, line 362.
+(gdb) n
+363	    [01mourgets[m[31m([mbuf[31m);[m
+(gdb) n
+sh33% n
+364	    [01mprintf[m[31m([m[31m"cmd [%s][m[35m\n[m[31m"[m[31m,[m buf[31m);[m	[36m// just print out what we got as-is[m
+(gdb) 
+cmd [n]
+365	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [35m0[m[31m)[m
+(gdb) n
+367	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'#'[m[31m)[m
+(gdb) n
+369	    [01;34mif[m [31m([mbuf[31m[[m[35m0[m[31m][m [31m==[m [31m'!'[m[31m)[m		[36m// begins with !, execute it as[m
+(gdb) n
+372	      [01msetArgsGiven[m[31m([mbuf[31m,[m arg[31m,[m types[31m,[m nArgsMax[31m);[m
+(gdb) n
+373	      [32mint[m k [31m=[m [01mfindCmd[m[31m([mbuf[31m,[m types[31m);[m
+(gdb) n
+374	      [01;34mif[m [31m([mk [31m>=[m [35m0[m[31m)[m
+(gdb) n
+377		[01musage[m[31m();[m
+(gdb) n
+The shell has only the following cmds:
+	cd	s
+	cp	ss
+	echo	ssss
+	inode	u
+	ls	
+	lslong	
+	mkdir	s
+	mkdisk	s
+	mkfs	s
+	mount	us
+	mount	
+	mv	ss
+	rddisk	su
+	rmdir	s
+	rm	s
+	pwd	
+	q	
+	quit	
+	umount	u
+	wrdisk	sus
+Start with ! to invoke a Unix shell cmd
+361	    [31m*[mbuf [31m=[m [35m0[m[31m;[m			[36m// clear old input[m
+(gdb) n
+362	    [01mprintf[m[31m([m[31m"%s"[m[31m,[m [31m"sh33% "[m[31m);[m	[36m// prompt[m
+(gdb) n
+363	    [01mourgets[m[31m([mbuf[31m);[m
+(gdb) n
+sh33% ^C
+Program received signal SIGINT, Interrupt.
+[34m0x00007ffff7cc7ec2[m in [33mread[m () from [32m/usr/lib/libc.so.6[m
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 417815] will be killed.
+
+Quit anyway? (y or n) y
+[2m⏎(B[m                                                                                                                                              ⏎ [K[?2004h]0;[ ~/D/W/2/C/C/P/s/P0-2020-Fall ][30m(B[m]0;[ ~/D/W/2/C/C/P/s/P0-2020-Fall ][37m[44m  [1m[30m[47m rjslater@veronica [1m[33m[40m ~/D/W/2/C/C/P/s/P0-2020-Fall (B[m [K[63C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 12:07 (B[m[116C[53C[63C[1m[32m(base) (B[m[32m[40m ✔ (B[m[1m[30m[43m  (main)  [1m[30m[106m 12:07 (B[m[116C[53C
+[30m(B[m[30m(B[m[?2004l
+Script done on 2020-09-22 12:07:02-04:00 [COMMAND_EXIT_CODE="0"]

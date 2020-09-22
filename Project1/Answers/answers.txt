@@ -1,0 +1,9 @@
+1.  dup2 - copies a file descriptor, basically copies an open file
+    creat - open or create a new file
+    pipe - creates a pipe, which lets you redirect stdout to stdin of another command
+    fork - duplicates a process into a child process
+    pthread_create - creates a new thread without duplicating an existing process
+    system - run a shell command, cannot be interrupted
+    printf - print to stdout with pretty formatting
+
+2. Given that the provided arguments are acceptable for the command trying to be invoked, the last line will execute the command with the passed args.
