@@ -4,6 +4,11 @@
  */
 
 #include "fs33types.hpp"
+#include "unistd.h"
+#include <signal.h>
+#include <iostream>
+#include <string>
+#include <sys/wait.h>
 
 extern MountEntry *mtab;
 extern VNIN cwdVNIN;
@@ -223,9 +228,9 @@ void doUmount(Arg * a)
     TODO("doUmount");
 }
 
-// void doRedirect(Arg *a) {
-//     doWriteDisk(a);
-// };
+void doCat(Arg *a) {
+    system("cat");
+}
 
 /* The following describes one entry in our table of commands.    For
  * each cmmdName (a null terminated string), we specify the arguments
@@ -264,8 +269,8 @@ public:
     {"q", "", "", doQuit},
     {"quit", "", "", doQuit},
     {"umount", "u", "m", doUmount},
-    {"wrdisk", "sus", "", doWriteDisk}
-    // {">", "s", "", doRedirect}
+    {"wrdisk", "sus", "", doWriteDisk},
+    {"cat", "", "", doCat}
 };
 
 uint ncmds = sizeof(cmdTable) / sizeof(CmdTable);
@@ -306,6 +311,7 @@ void invokeCmd(int k, Arg *arg)
 	printf("arg #%d (%s) must be a number.\n", i, arg[i].s);
         }
     }
+
     if (ok)
         (*cmdTable[k].func) (arg);
 }
@@ -343,8 +349,7 @@ void setArgsGiven(char *buf, Arg *arg, char *types, uint nMax)
 int findCmd(char *name, char *argtypes)
 {
     for (uint i = 0; i < ncmds; i++) {
-        if (strcmp(name, cmdTable[i].cmdName) == 0
-	&& strcmp(argtypes, cmdTable[i].argsRequired) == 0) {
+        if (strcmp(name, cmdTable[i].cmdName) == 0 && strcmp(argtypes, cmdTable[i].argsRequired) == 0) {
             return i;
         }
     }
@@ -357,8 +362,7 @@ void ourgets(char *buf) {
     if (p) *p = 0;
 }
 
-int main()
-{
+int main() {
     char buf[1024];		// better not type longer than 1023 chars
 
     usage();
@@ -374,12 +378,130 @@ int main()
         if (buf[0] == '!')		// begins with !, execute it as
             system(buf + 1);		// a normal shell cmd
         else {
+            int output_file_handle = 0;
+            int old_stdout = 10;
+            int old_stdin = 11;
+
+            // ##### START PIPE CODE ######
+            // Look for a pipe
+            bool use_pipe = false;
+            for (int i = 0; i < 1024; i++)
+                if (buf[i] == '|') {
+                    use_pipe = true;
+                    break;
+                }
+
+            // Set up pipe
+            int pid;
+            int *pipe_file_handles = new int[2];
+            if (use_pipe) {
+                // Parent will write to stdout, child will read
+                // Create and set up pipe and fork
+                int pipe_status = pipe(pipe_file_handles);
+                pid = fork();
+
+                // Set up read and write file handles for child/parent
+                // Child
+                if (pid == 0) {
+                    // Get the command after the pipe
+                    std::string buf_string = std::string(buf);
+                    int pipe_index = buf_string.find('|');
+                    buf_string = buf_string.substr(pipe_index + 1);
+                    size_t p = buf_string.find_first_not_of(" \t");
+                    buf_string.erase(0, p);
+                    for (int i = 0; i < 1024; i++)
+                        buf[i] = '\0';
+                    for (int i = 0; i < buf_string.size(); i++)
+                        buf[i] = buf_string[i];
+                    dup2(STDIN_FILENO, old_stdin);  // Backup stdin
+                    close(pipe_file_handles[1]);  // Close pipe output on child
+                    dup2(pipe_file_handles[0], STDIN_FILENO);
+                } else {
+                    dup2(STDOUT_FILENO, old_stdout);  // Backup stdout
+                    close(pipe_file_handles[0]);  // Close pipe input on parent
+                    dup2(pipe_file_handles[1], STDOUT_FILENO);
+                    // Get the command before the pipe
+                    for (int i = 1023; i >= 0; i--) {
+                        if (buf[i] == '|') {
+                            for (int j = i - 1; j >= 0; j--)
+                                if (!isAlphaNumDot(buf[j]))
+                                    buf[j] = '\0';
+                            buf[i] = '\0';
+                            break;
+                        }
+                        buf[i] = '\0';
+                    }
+                }
+            }
+            // ##### STOP PIPE CODE ######
+
+            // ##### START REDIRECT CODE ######
+            // Iterate through the buffer looking for '>'
+            // If found, redirect to file instead of outputting to stdout
+            bool redirect = false;
+            char filename[1024];
+            int filename_index = 0;
+            strcpy(filename, "");
+            for (int i = 0; i < 1024; i++) {
+                if (redirect) {
+                    if (buf[i] != ' ') {
+                    filename[filename_index] = buf[i];
+                    filename_index++;
+                    }
+                }
+                if (buf[i] == '>')
+                    redirect = true;
+            }
+
+            // Get the filename and set the output redirect
+            if (redirect) {
+                int output_file_handle = open(filename, O_RDWR|O_CREAT, S_IRWXU);
+                old_stdout = dup(STDOUT_FILENO);
+                dup2(output_file_handle, STDOUT_FILENO);
+            }
+            // ##### STOP REDIRECT CODE ######
+
+            // Figure out args
             setArgsGiven(buf, arg, types, nArgsMax);
+            // Clear "ss" from the end of argtypes to get findCmd to still recognize the command
+            if (redirect)
+                for (int i = nArgsMax; i >= 0; i--)
+                    if (types[i] == 's')
+                        types[i] = '\0';
+
+            // Find the command to run, and execute
             int k = findCmd(buf, types);
-            if (k >= 0)
-	invokeCmd(k, arg);
-            else
-	usage();
+            if (k >= 0) {
+                invokeCmd(k, arg);
+                // Reset stdin/out
+                if (redirect)
+                    dup2(old_stdout, STDOUT_FILENO);
+                if (use_pipe) {
+                    if (pid == 0) {
+                        close(pipe_file_handles[0]);
+                        dup2(old_stdin, STDIN_FILENO);
+                        exit(0);
+                    } else {
+                        close(pipe_file_handles[1]);
+                        dup2(old_stdout, STDOUT_FILENO);
+                        wait(NULL);
+                    }
+                }
+            } else {
+                // Reset stdin/out
+                if (redirect)
+                    dup2(old_stdout, STDOUT_FILENO);
+                if (use_pipe) {
+                    if (pid == 0) {
+                        dup2(old_stdin, STDIN_FILENO);
+                        exit(0);
+                    } else {
+                        dup2(old_stdout, STDOUT_FILENO);
+                        wait(NULL);
+                    }
+                }
+                usage();
+            }
         }
     }
 }
