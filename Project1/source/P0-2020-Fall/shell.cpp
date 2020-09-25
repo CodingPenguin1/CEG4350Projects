@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string>
 #include <sys/wait.h>
-#include <future>
+#include <pthread.h>
 
 extern MountEntry *mtab;
 extern VNIN cwdVNIN;
@@ -229,10 +229,6 @@ void doUmount(Arg * a)
     TODO("doUmount");
 }
 
-void doCat(Arg *a) {
-    system("cat");
-}
-
 /* The following describes one entry in our table of commands.    For
  * each cmmdName (a null terminated string), we specify the arguments
  * it requires by a sequence of letters.    The letter s stands for
@@ -270,8 +266,7 @@ public:
     {"q", "", "", doQuit},
     {"quit", "", "", doQuit},
     {"umount", "u", "m", doUmount},
-    {"wrdisk", "sus", "", doWriteDisk},
-    {"cat", "", "", doCat}
+    {"wrdisk", "sus", "", doWriteDisk}
 };
 
 uint ncmds = sizeof(cmdTable) / sizeof(CmdTable);
@@ -363,6 +358,19 @@ void ourgets(char *buf) {
     if (p) *p = 0;
 }
 
+void *pthread_system(void *args) {
+    const char *arg_char = (char*)args;
+    system(arg_char);
+    pthread_exit(NULL);
+}
+
+void *pthread_custom_command(void *args) {
+    char *arg_char = (char*)args;
+    int command_number = (int)arg_char[0];
+    invokeCmd(command_number, arg);
+    pthread_exit(NULL);
+}
+
 int main() {
     char buf[1024];		// better not type longer than 1023 chars
 
@@ -377,7 +385,6 @@ int main() {
         if (buf[0] == '#')
             continue;			// this is a comment line, do nothing
         else {
-            int output_file_handle = 0;
             int old_stdout = 10;
             int old_stdin = 11;
 
@@ -396,7 +403,7 @@ int main() {
             if (use_pipe) {
                 // Parent will write to stdout, child will read
                 // Create and set up pipe and fork
-                int pipe_status = pipe(pipe_file_handles);
+                pipe(pipe_file_handles);
                 pid = fork();
 
                 // Set up read and write file handles for child/parent
@@ -410,7 +417,7 @@ int main() {
                     buf_string.erase(0, p);
                     for (int i = 0; i < 1024; i++)
                         buf[i] = '\0';
-                    for (int i = 0; i < buf_string.size(); i++)
+                    for (size_t i = 0; i < buf_string.size(); i++)
                         buf[i] = buf_string[i];
                     dup2(STDIN_FILENO, old_stdin);  // Backup stdin
                     close(pipe_file_handles[1]);  // Close pipe output on child
@@ -453,8 +460,9 @@ int main() {
             }
 
             // Get the filename and set the output redirect
+            int output_file_handle;
             if (redirect) {
-                int output_file_handle = open(filename, O_RDWR|O_CREAT, S_IRWXU);
+                output_file_handle = open(filename, O_RDWR|O_CREAT, S_IRWXU);
                 old_stdout = dup(STDOUT_FILENO);
                 dup2(output_file_handle, STDOUT_FILENO);
             }
@@ -479,7 +487,8 @@ int main() {
             // If begins with !, run normal shell command
             if (buf[0] == '!') {
                 if (execute_in_background) {
-                    std::async(std::launch::async, system, buf + 1);
+                    pthread_t thread;
+                    pthread_create(&thread, NULL, pthread_system, buf + 1);
                 } else {
                     system(buf + 1);
                 }
@@ -497,13 +506,16 @@ int main() {
                 // If custom command found, execute
                 if (k >= 0) {
                     if (execute_in_background) {
-                        std::async(std::launch::async, invokeCmd, k, arg);
+                        pthread_t thread;
+                        pthread_create(&thread, NULL, pthread_custom_command, &k);
                     } else {
                         invokeCmd(k, arg);
                     }
                     // Reset stdin/out
-                    if (redirect)
+                    if (redirect) {
                         dup2(old_stdout, STDOUT_FILENO);
+                        close(output_file_handle);
+                    }
                     if (use_pipe) {
                         if (pid == 0) {
                             close(pipe_file_handles[0]);
@@ -519,13 +531,17 @@ int main() {
                 // If no custom command found, print usage
                 } else {
                     // Reset stdin/out
-                    if (redirect)
+                    if (redirect) {
                         dup2(old_stdout, STDOUT_FILENO);
+                        close(output_file_handle);
+                    }
                     if (use_pipe) {
                         if (pid == 0) {
+                            close(pipe_file_handles[0]);
                             dup2(old_stdin, STDIN_FILENO);
                             exit(0);
                         } else {
+                            close(pipe_file_handles[1]);
                             dup2(old_stdout, STDOUT_FILENO);
                             wait(NULL);
                         }
