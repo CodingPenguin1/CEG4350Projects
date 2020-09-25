@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <sys/wait.h>
+#include <future>
 
 extern MountEntry *mtab;
 extern VNIN cwdVNIN;
@@ -375,8 +376,6 @@ int main() {
             continue;
         if (buf[0] == '#')
             continue;			// this is a comment line, do nothing
-        if (buf[0] == '!')		// begins with !, execute it as
-            system(buf + 1);		// a normal shell cmd
         else {
             int output_file_handle = 0;
             int old_stdout = 10;
@@ -461,46 +460,78 @@ int main() {
             }
             // ##### STOP REDIRECT CODE ######
 
-            // Figure out args
-            setArgsGiven(buf, arg, types, nArgsMax);
-            // Clear "ss" from the end of argtypes to get findCmd to still recognize the command
-            if (redirect)
-                for (int i = nArgsMax; i >= 0; i--)
-                    if (types[i] == 's')
-                        types[i] = '\0';
+            // ##### START BACKGROUND CODE #####
+            bool execute_in_background = false;
+            for (int i = 1023; i >= 0; i--) {
+                if (execute_in_background && !isAlphaNumDot(buf[i])) {
+                    buf[i] = '\0';
+                } else if (execute_in_background) {
+                    break;
+                }
+                if (buf[i] == '&') {
+                    execute_in_background = true;
+                    buf[i] = '\0';
+                }
+            }
+            // ##### STOP BACKGROUND CODE #####
 
-            // Find the command to run, and execute
-            int k = findCmd(buf, types);
-            if (k >= 0) {
-                invokeCmd(k, arg);
-                // Reset stdin/out
-                if (redirect)
-                    dup2(old_stdout, STDOUT_FILENO);
-                if (use_pipe) {
-                    if (pid == 0) {
-                        close(pipe_file_handles[0]);
-                        dup2(old_stdin, STDIN_FILENO);
-                        exit(0);
-                    } else {
-                        close(pipe_file_handles[1]);
-                        dup2(old_stdout, STDOUT_FILENO);
-                        wait(NULL);
-                    }
+            // ##### EXECUTE COMMAND #####
+            // If begins with !, run normal shell command
+            if (buf[0] == '!') {
+                if (execute_in_background) {
+                    std::async(std::launch::async, system, buf + 1);
+                } else {
+                    system(buf + 1);
                 }
+            // Else run custom command
             } else {
-                // Reset stdin/out
+                setArgsGiven(buf, arg, types, nArgsMax);  // Figure out args
+                // Clear "ss" from the end of argtypes to get findCmd to still recognize the command
+                // ">" and filename are counted as args, so remove them to correct setArgsGiven
                 if (redirect)
-                    dup2(old_stdout, STDOUT_FILENO);
-                if (use_pipe) {
-                    if (pid == 0) {
-                        dup2(old_stdin, STDIN_FILENO);
-                        exit(0);
+                    for (int i = nArgsMax; i >= 0; i--)
+                        if (types[i] == 's')
+                            types[i] = '\0';
+                int k = findCmd(buf, types);  // Try to find the command to run
+
+                // If custom command found, execute
+                if (k >= 0) {
+                    if (execute_in_background) {
+                        std::async(std::launch::async, invokeCmd, k, arg);
                     } else {
-                        dup2(old_stdout, STDOUT_FILENO);
-                        wait(NULL);
+                        invokeCmd(k, arg);
                     }
+                    // Reset stdin/out
+                    if (redirect)
+                        dup2(old_stdout, STDOUT_FILENO);
+                    if (use_pipe) {
+                        if (pid == 0) {
+                            close(pipe_file_handles[0]);
+                            dup2(old_stdin, STDIN_FILENO);
+                            exit(0);
+                        } else {
+                            close(pipe_file_handles[1]);
+                            dup2(old_stdout, STDOUT_FILENO);
+                            wait(NULL);
+                        }
+                    }
+
+                // If no custom command found, print usage
+                } else {
+                    // Reset stdin/out
+                    if (redirect)
+                        dup2(old_stdout, STDOUT_FILENO);
+                    if (use_pipe) {
+                        if (pid == 0) {
+                            dup2(old_stdin, STDIN_FILENO);
+                            exit(0);
+                        } else {
+                            dup2(old_stdout, STDOUT_FILENO);
+                            wait(NULL);
+                        }
+                    }
+                    usage();
                 }
-                usage();
             }
         }
     }
