@@ -3,7 +3,7 @@
 CURRENT_DIR = P0
 PROJECT = P0
 
-CFLAGS = -ggdb -Wall -Wextra -Wpedantic -ansi -pedantic -Wno-write-strings -Wno-parentheses -Wno-unused-parameter -std=gnu++11 -lpthread
+CFLAGS = -ggdb -Wall -Wextra -Wpedantic -ansi -pedantic -Wno-write-strings -Wno-parentheses -Wno-unused-parameter -Wno-maybe-uninitialized -std=gnu++11 -lpthread
 CC = g++
 
 .SUFFIXES: .cpp .o .C
